@@ -1,5 +1,5 @@
 import timeit
-
+# 补充timeit库的说明见readme
 TIMES = 10000
 
 SETUP = """
