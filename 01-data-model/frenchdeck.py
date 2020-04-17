@@ -17,6 +17,7 @@ class FrenchDeck:
         return len(self._cards)
 
     def __getitem__(self, position):
+        # print("__getitem__")
         return self._cards[position]
 
 if __name__=="__main__":
@@ -28,6 +29,7 @@ if __name__=="__main__":
     from random import choice
     print(choice(deck))
     # 支持切片
+    # 可以看到，切片只调用了一次__getitem__()
     print(deck[10:14:2])
     # 可迭代
     for card in deck:
