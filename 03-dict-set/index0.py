@@ -12,9 +12,12 @@ WORD_RE = re.compile(r'\w+')
 
 index = {}
 with open(sys.argv[1], encoding='utf-8') as fp:
-    for line_no, line in enumerate(fp, 1):
+    for line_no, line in enumerate(fp,1): # 表示enumerate从1开始 
+        # print(line_no,line,end="")
         for match in WORD_RE.finditer(line):
+            
             word = match.group()
+            # print(match,word)
             column_no = match.start()+1
             location = (line_no, column_no)
             # this is ugly; coded like this to make a point

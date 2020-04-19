@@ -39,17 +39,21 @@ Tests for the `in` operator::
 class StrKeyDict0(dict):  # <1>
 
     def __missing__(self, key):
+        print("missing")
         if isinstance(key, str):  # <2>
             raise KeyError(key)
         return self[str(key)]  # <3>
 
     def get(self, key, default=None):
+        print('get')
         try:
             return self[key]  # <4>
         except KeyError:
             return default  # <5>
 
     def __contains__(self, key):
+        print('contain')
+        # 这里没有用更优python风格的k in d来调用，因为这样会不断循环调用contain
         return key in self.keys() or str(key) in self.keys()  # <6>
 
 # END STRKEYDICT0
