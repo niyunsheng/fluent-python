@@ -1,3 +1,3 @@
 # coding: cp1252
 
-print('Olá, Mundo!')
+print('Olï¿½, Mundo!')
