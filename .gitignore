@@ -13,8 +13,11 @@ concurrency/wikipedia/fixture/docroot/
 attic/futures/countries/flags/
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
+**/__pycache__/
 *.py[cod]
+
+# notebook
+**/.ipynb_checkpoints
 
 # C extensions
 *.so
