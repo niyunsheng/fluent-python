@@ -31,7 +31,6 @@ A 2-dimensional vector class
 from array import array
 import math
 
-
 class Vector2d:
     typecode = 'd'  # <1>
 
