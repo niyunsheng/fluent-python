@@ -75,6 +75,7 @@ class LookingGlass:
         import sys
         self.original_write = sys.stdout.write  # <2>
         sys.stdout.write = self.reverse_write  # <3>
+        print("enter")
         return 'JABBERWOCKY'  # <4>
 
     def reverse_write(self, text):  # <5>
@@ -86,7 +87,13 @@ class LookingGlass:
         if exc_type is ZeroDivisionError:  # <9>
             print('Please DO NOT divide by zero!')
             return True  # <10>
+        print('exit')
         # <11>
 
 
 # END MIRROR_EX
+if __name__=="__main__":
+    t = LookingGlass()
+    print("1")
+    with t as f:
+        print(type(f))

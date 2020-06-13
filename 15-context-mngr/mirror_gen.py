@@ -55,10 +55,17 @@ def looking_glass():
 
     def reverse_write(text):  # <3>
         original_write(text[::-1])
-
+    print('enter for gen')
     sys.stdout.write = reverse_write  # <4>
     yield 'JABBERWOCKY'  # <5>
     sys.stdout.write = original_write  # <6>
+    print('exit for gen')
 
 
 # END MIRROR_GEN_EX
+if __name__=="__main__":
+    t = looking_glass()
+    print("1")
+    with t as f:
+        print(type(f))
+        print(f)
